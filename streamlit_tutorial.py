@@ -7,7 +7,7 @@ st.text("Built by Aiden Ou")
 def is_cat(f):
     return f[0].isupper()
 
-cat_vs_dog_model = load_learner("cat_vs_dog.pkl")
+cat_vs_dog_model = load_learner("cat-vs-dog.pkl")
 
 def predict(image):
     img = PILImage.create(image)
