@@ -18,7 +18,14 @@ def predict(image):
     elif likelihood_is_cat < 0.1:
         return "Dog"
     else:
-        return "Not sure… try another picture!"
+        return "Not sure... try another picture!"
+
+uploaded_file = st.file_uploader("Choose an image to upload...", type=["jpg", "png", "jpeg"])
+
+if uploaded_file is not None:
+    st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
+    prediction = predict(uploaded_file)
+    st.write(prediction)
 
 uploaded_file = st.file_uploader("Choose as image...", type=["jpg", "png", "jpeg"])
 video_url = "https://www.ayclogic.com/wp-content/uploads/2025/07/Crossing-Street.mp4"
